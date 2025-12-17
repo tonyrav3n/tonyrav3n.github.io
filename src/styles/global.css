@@ -1,0 +1,103 @@
+:root {
+  /* Dark Mode (Default) */
+  --bg-primary: #0a0a0a;
+  --bg-secondary: rgba(20, 20, 20, 0.8);
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --accent: #bb86fc;
+  --border: #333333;
+  --code-comment: #6a9955;
+  --code-tag: #569cd6;
+  --code-string: #ce9178;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  
+  /* Gradient Background */
+  --gradient-bg: linear-gradient(135deg, #2d1b4e 0%, #1c1c3a 50%, #4a1e3e 100%);
+}
+
+[data-theme='light'] {
+  --bg-primary: #ffffff;
+  --bg-secondary: rgba(255, 255, 255, 0.9);
+  --text-primary: #1a1a1a;
+  --text-secondary: #666666;
+  --accent: #6200ee;
+  --border: #e0e0e0;
+  --code-comment: #008000;
+  --code-tag: #0000ff;
+  --code-string: #a31515;
+  
+  /* Light Gradient */
+  --gradient-bg: linear-gradient(135deg, #f3e5f5 0%, #e3f2fd 50%, #fce4ec 100%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-mono);
+  background: var(--gradient-bg);
+  background-attachment: fixed;
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+  transition: background 0.5s ease;
+}
+
+#root {
+  width: 100%;
+  max-width: 900px;
+  background: var(--bg-secondary);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border);
+  padding: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Syntax Highlighting Utilities */
+.comment { color: var(--code-comment); }
+.tag { color: var(--code-tag); }
+.string { color: var(--code-string); }
+.bracket { color: var(--text-secondary); }

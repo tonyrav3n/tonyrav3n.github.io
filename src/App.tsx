@@ -1,0 +1,26 @@
+import React from 'react';
+import { ThemeProvider } from './context/ThemeContext';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import About from './components/About';
+import Skills from './components/Skills';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
+import './styles/global.css';
+
+const App: React.FC = () => {
+  return (
+    <ThemeProvider>
+      <Header />
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
+      </main>
+    </ThemeProvider>
+  );
+};
+
+export default App;
