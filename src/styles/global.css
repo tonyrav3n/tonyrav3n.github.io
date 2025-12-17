@@ -10,9 +10,6 @@
   --code-tag: #569cd6;
   --code-string: #ce9178;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
-  
-  /* Gradient Background */
-  --gradient-bg: linear-gradient(135deg, #2d1b4e 0%, #1c1c3a 50%, #4a1e3e 100%);
 }
 
 [data-theme='light'] {
@@ -25,9 +22,6 @@
   --code-comment: #008000;
   --code-tag: #0000ff;
   --code-string: #a31515;
-  
-  /* Light Gradient */
-  --gradient-bg: linear-gradient(135deg, #f3e5f5 0%, #e3f2fd 50%, #fce4ec 100%);
 }
 
 * {
@@ -38,28 +32,20 @@
 
 body {
   font-family: var(--font-mono);
-  background: var(--gradient-bg);
-  background-attachment: fixed;
+  background: var(--bg-primary);
   color: var(--text-primary);
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 2rem;
+  padding: 0;
   transition: background 0.5s ease;
 }
 
 #root {
   width: 100%;
   max-width: 900px;
-  background: var(--bg-secondary);
-  backdrop-filter: blur(10px);
-  border-radius: 12px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-  border: 1px solid var(--border);
   padding: 2rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
   animation: fadeIn 0.8s ease-out;
 }
 
