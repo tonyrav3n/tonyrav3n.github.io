@@ -3,6 +3,13 @@ import { FaMoon, FaSun, FaBars, FaTimes } from 'react-icons/fa';
 import { useTheme } from '../context/ThemeContext';
 import '../styles/components.css';
 
+interface NavItem {
+  label: string;
+  text: string;
+  href?: string;
+  isExternal?: boolean;
+}
+
 const Header: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
   const [time, setTime] = useState<string>('');
@@ -22,38 +29,37 @@ const Header: React.FC = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const navItems: NavItem[] = [
+    { label: '// Portfolio', text: 'tonyraven.dev' },
+    { label: '// Contact', text: 'tonyraven.dev@gmail.com', href: 'mailto:tonyraven.dev@gmail.com' },
+    { label: '// Github', text: 'github.com/tonyrav3n', href: 'https://github.com/tonyrav3n', isExternal: true },
+    { label: '// Location', text: `Earth, ${time}` }
+  ];
+
   return (
     <header className="header">
       {/* Desktop Layout: Info Bar (Left) + Theme Toggle (Right) */}
       <div className="header-content desktop-only">
         <div className="header-info-bar">
-          <div className="info-group">
-            <span className="comment">//portfolio</span>
-            <span className="info-value">tonyraven.dev</span>
-          </div>
-          
-          <div className="separator"></div>
-
-          <div className="info-group">
-            <span className="comment">//contact</span>
-            <a href="mailto:hello@example.com" className="info-value hover-link">hello@example.com</a>
-          </div>
-
-          <div className="separator"></div>
-
-          <div className="info-group">
-            <span className="comment">//github</span>
-            <a href="https://github.com/tonyrav3n" target="_blank" rel="noopener noreferrer" className="info-value hover-link">
-              github.com/tonyrav3n
-            </a>
-          </div>
-
-          <div className="separator"></div>
-
-          <div className="info-group">
-            <span className="comment">//location</span>
-            <span className="info-value">Earth, {time}</span>
-          </div>
+          {navItems.map((item, index) => (
+            <React.Fragment key={index}>
+              <div className="info-group">
+                <span className="comment">{item.label}</span>
+                {item.href ? (
+                  <a
+                    href={item.href}
+                    className="info-value hover-link"
+                    {...(item.isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                  >
+                    {item.text}
+                  </a>
+                ) : (
+                  <span className="info-value">{item.text}</span>
+                )}
+              </div>
+              {index < navItems.length - 1 && <div className="separator"></div>}
+            </React.Fragment>
+          ))}
         </div>
 
         <button onClick={toggleTheme} className="theme-toggle" aria-label="Toggle theme">
@@ -74,27 +80,22 @@ const Header: React.FC = () => {
 
         {/* Mobile Dropdown Menu */}
         <div className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}>
-          <div className="info-group">
-            <span className="comment">//portfolio</span>
-            <span className="info-value">tonyraven.dev</span>
-          </div>
-          
-          <div className="info-group">
-            <span className="comment">//contact</span>
-            <a href="mailto:hello@example.com" className="info-value hover-link">hello@example.com</a>
-          </div>
-
-          <div className="info-group">
-            <span className="comment">//github</span>
-            <a href="https://github.com/tonyrav3n" target="_blank" rel="noopener noreferrer" className="info-value hover-link">
-              github.com/tonyrav3n
-            </a>
-          </div>
-
-          <div className="info-group">
-            <span className="comment">//location</span>
-            <span className="info-value">Earth, {time}</span>
-          </div>
+          {navItems.map((item, index) => (
+            <div className="info-group" key={index}>
+              <span className="comment">{item.label}</span>
+              {item.href ? (
+                <a
+                  href={item.href}
+                  className="info-value hover-link"
+                  {...(item.isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                >
+                  {item.text}
+                </a>
+              ) : (
+                <span className="info-value">{item.text}</span>
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </header>

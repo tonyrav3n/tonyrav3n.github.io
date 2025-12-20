@@ -11,7 +11,7 @@ const Skills: React.FC = () => {
   return (
     <section id="skills" className="section">
       <div className="section-header">
-        <span className="comment">//skills</span>
+        <span className="comment">// Skills</span>
       </div>
       <div className="skills-grid">
         <div className="skill-category">
@@ -22,7 +22,7 @@ const Skills: React.FC = () => {
             ))}
           </div>
         </div>
-        
+
         <div className="skill-category">
           <h3>Backend</h3>
           <div className="skill-list">

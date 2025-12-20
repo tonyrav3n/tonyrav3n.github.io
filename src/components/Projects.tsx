@@ -27,7 +27,7 @@ const Projects: React.FC = () => {
   return (
     <section id="projects" className="section">
       <div className="section-header">
-        <span className="comment">//projects</span>
+        <span className="comment">// Projects</span>
       </div>
       <div className="projects-grid">
         {projects.map((project, index) => (
