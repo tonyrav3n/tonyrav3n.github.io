@@ -213,6 +213,7 @@
   border-radius: 0;
   padding: 1.5rem;
   transition: border-color 0.2s;
+  max-width: 450px;
 }
 
 .project-card:hover {

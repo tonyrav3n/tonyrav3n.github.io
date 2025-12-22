@@ -1,5 +1,5 @@
-import React from 'react';
-import '../styles/components.css';
+import React from "react";
+import "../styles/components.css";
 
 const About: React.FC = () => {
   return (
@@ -7,11 +7,14 @@ const About: React.FC = () => {
       <div className="section-header">
         <span className="comment">// About</span>
       </div>
-      <p style={{ lineHeight: '1.6', maxWidth: '600px' }}>
-        Hi, I'm Tony. I enjoy building dynamic, creative products from start to finish.
-        Focused on developing intuitive experiences that constantly grow and improve based on user metrics.
+      <p style={{ lineHeight: "1.6", maxWidth: "600px" }}>
+        I'm a Fullstack Developer bridging the gap between complex smart
+        contracts and intuitive user interfaces. Specialising in{" "}
+        <b>Next.js</b> and <b>Solidity</b>, I build DApps that feel as smooth
+        as traditional web apps.
         <br /><br />
-        Currently exploring new technologies and building cool stuff on the web.
+        Whether it's crafting high-performance frontends or automating community
+        logic with Discord bots, I focus on shipping products that work.
       </p>
     </section>
   );

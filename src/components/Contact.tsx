@@ -1,6 +1,6 @@
-import React from 'react';
-import { FaEnvelope, FaGithub } from 'react-icons/fa';
-import '../styles/components.css';
+import React from "react";
+import { FaDiscord, FaEnvelope, FaGithub } from "react-icons/fa";
+import "../styles/components.css";
 
 const Contact: React.FC = () => {
   return (
@@ -9,16 +9,28 @@ const Contact: React.FC = () => {
         <span className="comment">// Contact</span>
       </div>
       <div className="contact-links">
-        <p style={{ marginBottom: '1rem', maxWidth: '500px' }}>
-          I'm currently looking for new opportunities. Whether you have a question or just want to say hi,
-          I'll try my best to get back to you!
+        <p style={{ marginBottom: "1rem", maxWidth: "500px" }}>
+          Interested in building something together? Let's talk.
         </p>
 
         <a href="mailto:tonyraven.dev@gmail.com" className="contact-item">
           <FaEnvelope /> tonyraven.dev@gmail.com
         </a>
-        <a href="https://github.com/tonyrav3n" target="_blank" rel="noopener noreferrer" className="contact-item">
+        <a
+          href="https://github.com/tonyrav3n"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="contact-item"
+        >
           <FaGithub /> github.com/tonyrav3n
+        </a>
+        <a
+          href="https://discord.com/users/643962985089335296"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="contact-item"
+        >
+          <FaDiscord /> tonyrav3n
         </a>
       </div>
     </section>
